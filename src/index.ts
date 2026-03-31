@@ -1,14 +1,3 @@
-/**
- * Countries MCP — world country data from REST Countries API v3.1
- *
- * Tools:
- * - search_countries: Search countries by name
- * - get_country_by_code: Get country by ISO alpha-2 or alpha-3 code
- * - countries_by_region: List countries in a region
- * - countries_by_language: Find countries by spoken language
- * - countries_by_currency: Find countries using a currency
- */
-
 interface McpToolDefinition {
   name: string;
   description: string;
@@ -24,11 +13,23 @@ interface McpToolExport {
   callTool: (name: string, args: Record<string, unknown>) => Promise<unknown>;
 }
 
+/**
+ * Countries MCP — world country data from REST Countries API v3.1
+ *
+ * Tools:
+ * - search_countries: Search countries by name
+ * - get_country_by_code: Get country by ISO alpha-2 or alpha-3 code
+ * - countries_by_region: List countries in a region
+ * - countries_by_language: Find countries by spoken language
+ * - countries_by_currency: Find countries using a currency
+ */
+
+
 const BASE_URL = 'https://restcountries.com/v3.1';
 
 const FIELDS = 'name,capital,region,subregion,population,area,languages,currencies,flag,cca2,cca3,flags';
 
-// -- Types --
+// ── Types ──────────────────────────────────────────────────────────────
 
 interface RestCountry {
   name: { common: string; official: string };
@@ -45,7 +46,7 @@ interface RestCountry {
   flags?: { png?: string; svg?: string };
 }
 
-// -- Helpers --
+// ── Helpers ────────────────────────────────────────────────────────────
 
 function formatLanguages(languages?: Record<string, string>): string[] {
   return languages ? Object.values(languages) : [];
@@ -102,7 +103,7 @@ function regionalCountry(c: RestCountry) {
   };
 }
 
-// -- Tool definitions --
+// ── Tool definitions ───────────────────────────────────────────────────
 
 const tools: McpToolExport['tools'] = [
   {
@@ -165,7 +166,7 @@ const tools: McpToolExport['tools'] = [
   },
 ];
 
-// -- Tool dispatch --
+// ── Tool dispatch ──────────────────────────────────────────────────────
 
 async function callTool(name: string, args: Record<string, unknown>): Promise<unknown> {
   switch (name) {
