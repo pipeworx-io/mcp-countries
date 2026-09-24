@@ -1,20 +1,32 @@
 {
   "name": "@pipeworx/mcp-countries",
-  "version": "0.1.0",
-  "description": "Countries MCP — world country data from REST Countries API v3.1",
+  "version": "0.1.1",
+  "description": "Countries MCP — world country data.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "bin": {
+    "mcp-countries": "bin/cli.js"
+  },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "countries"],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeworx-io/mcp-countries"
+    "url": "git+https://github.com/pipeworx-io/mcp-countries.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
   "devDependencies": {
-    "typescript": "^5.7.0"
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-aa1646402e22d9fb4b54179fd0f358e30994b8185aeb5c0384c98c4fb8a788ef",
+    "sourceCommit": "60f04b68c347e970c6be94a53439d1364061fc06"
   }
 }
