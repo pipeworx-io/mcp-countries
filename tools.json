@@ -1,0 +1,82 @@
+[
+  {
+    "name": "search_countries",
+    "description": "Search for countries by name. Returns official name, capital, region, population, area, languages, currencies, flag emoji, and the country's land borders by name — so \"which countries border Bolivia\" is answerable directly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Country name to search for (partial matches are supported)"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_country_by_code",
+    "description": "Get country details by ISO code (e.g., \"US\" for United States or \"FRA\" for France). Returns capital, population, languages, currencies, area, and region.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 or alpha-3 country code"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  {
+    "name": "countries_by_region",
+    "description": "List all countries in a region (e.g., \"Africa\", \"Europe\", \"Asia\"). Returns name, capital, population, area, and flag emoji.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "description": "Region name — one of: africa, americas, asia, europe, oceania"
+        }
+      },
+      "required": [
+        "region"
+      ]
+    }
+  },
+  {
+    "name": "countries_by_language",
+    "description": "Find countries where a language is spoken (e.g., \"Spanish\", \"Mandarin\"). Returns name, capital, region, population, and official language status.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Language name (e.g. \"spanish\", \"french\", \"arabic\")"
+        }
+      },
+      "required": [
+        "language"
+      ]
+    }
+  },
+  {
+    "name": "countries_by_currency",
+    "description": "Find countries using a currency (e.g., \"EUR\" for Euro, \"USD\" for US Dollar). Returns name, capital, region, and currency details.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "Currency code or name (e.g. \"eur\", \"usd\", \"dollar\")"
+        }
+      },
+      "required": [
+        "currency"
+      ]
+    }
+  }
+]
