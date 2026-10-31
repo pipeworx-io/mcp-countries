@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-countries",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Countries MCP — world country data.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "countries",
     "gatewaySlug": "countries",
-    "sourceHash": "v1-cb8cf0474af10a30bc809eceff5b9d5e6bccb0eb3747c632994bbc9d67ecaa5e",
-    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
+    "sourceHash": "v1-bb0948afa65cb776141b5fe76542d390bb49462b4cfb7c417c9f26b2630d8f93",
+    "sourceCommit": "8cc978183948532674e797c429305c9d8ab2a1c3"
   }
 }
